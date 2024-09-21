@@ -7,9 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        "custom-inset": "inset 10px -50px 94px 0 rgba(199, 199, 199, 0.2)",
+      },
+      fontFamily: {
+        satoshi: ["Satoshi", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "primary-orange": "#FF5722",
       },
     },
   },
