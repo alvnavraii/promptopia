@@ -1,6 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import ProfileComponent from "@/components/ProfileComponent";
@@ -37,15 +37,17 @@ const Profile = () => {
   };
 
   return (
-    <div>
-      <ProfileComponent
-        name="My"
-        desc="Welcome to your personalized profile"
-        data={myPosts}
-        handleEdit={handleEdit}
-        handleDelete={handleDelete}
-      />
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div>
+        <ProfileComponent
+          name="My"
+          desc="Welcome to your personalized profile"
+          data={myPosts}
+          handleEdit={handleEdit}
+          handleDelete={handleDelete}
+        />
+      </div>
+    </Suspense>
   );
 };
 export default Profile;
