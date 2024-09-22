@@ -77,7 +77,6 @@ const Nav = () => {
               className="rounded-full"
               alt="profile"
               onClick={() => {
-                console.log("Imagen clicada");
                 setToggleDropdown(!toggleDropdown);
               }}
             />
